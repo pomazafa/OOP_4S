@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product>
+    <Name>tovar8</Name>
+    <Number>6288163</Number>
+    <Size>33x29</Size>
+    <Weight>870</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2018-10-11T17:42:00</Date>
+    <Amount>4</Amount>
+    <Price>2</Price>
+    <Manufacturer>
+      <organization>Онега</organization>
+      <country>Эстония</country>
+      <address>Address eeeee</address>
+      <telephoneNumber>(15)228-57-36</telephoneNumber>
+    </Manufacturer>
+  </Product>
+  <Product>
+    <Name>tovar1</Name>
+    <Number>255317772</Number>
+    <Size>20x2299</Size>
+    <Weight>85</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-03-26T17:43:05</Date>
+    <Amount>4</Amount>
+    <Price>11</Price>
+    <Manufacturer>
+      <organization>Ами мебель</organization>
+      <country>Швеция</country>
+      <address>djjjaggdgggbwbb</address>
+      <telephoneNumber>(15)528-88-32</telephoneNumber>
+    </Manufacturer>
+  </Product>
+  <Product>
+    <Name>tovarchic 22</Name>
+    <Number>14442331</Number>
+    <Size>55x90</Size>
+    <Weight>5000</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-04-06T09:34:37</Date>
+    <Amount>4</Amount>
+    <Price>17</Price>
+    <Manufacturer>
+      <organization>Другой</organization>
+      <country>Австрия</country>
+      <address>abvgd</address>
+      <telephoneNumber>(14)322-33-41</telephoneNumber>
+    </Manufacturer>
+  </Product>
+</ArrayOfProduct>

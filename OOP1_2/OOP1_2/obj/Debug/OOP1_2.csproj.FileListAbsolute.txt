@@ -1,0 +1,10 @@
+F:\S4\OOP\OOP1_2\OOP1_2\bin\Debug\OOP1_2.exe.config
+F:\S4\OOP\OOP1_2\OOP1_2\bin\Debug\OOP1_2.exe
+F:\S4\OOP\OOP1_2\OOP1_2\bin\Debug\OOP1_2.pdb
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.csprojAssemblyReference.cache
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.Form1.resources
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.Properties.Resources.resources
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.csproj.GenerateResource.cache
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.csproj.CoreCompileInputs.cache
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.exe
+F:\S4\OOP\OOP1_2\OOP1_2\obj\Debug\OOP1_2.pdb

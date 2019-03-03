@@ -1,0 +1,13 @@
+F:\S4\OOP\OOP1\OOP1\bin\Debug\OOP1.exe.config
+F:\S4\OOP\OOP1\OOP1\bin\Debug\OOP1.exe
+F:\S4\OOP\OOP1\OOP1\bin\Debug\OOP1.pdb
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.csprojAssemblyReference.cache
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.Properties.Resources.resources
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.csproj.GenerateResource.cache
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.csproj.CoreCompileInputs.cache
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.exe
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.pdb
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.FormForIndex.resources
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.FormForString.resources
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.FormForRemove.resources
+F:\S4\OOP\OOP1\OOP1\obj\Debug\OOP1.MainForm.resources

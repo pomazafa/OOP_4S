@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product>
+    <Name>Кресло</Name>
+    <Number>12488812</Number>
+    <Size>100х200</Size>
+    <Weight>8840</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-03-31T14:55:50</Date>
+    <Amount>4</Amount>
+    <Price>47</Price>
+    <Manufacturer>
+      <organization>Ами мебель</organization>
+      <country>Германия</country>
+      <address>г. Дрезден, улица Шеншель, д. 73</address>
+      <telephoneNumber>(83)661-82-73</telephoneNumber>
+    </Manufacturer>
+  </Product>
+</ArrayOfProduct>
