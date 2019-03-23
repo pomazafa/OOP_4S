@@ -13,26 +13,29 @@ namespace OOP2
     public class Manufacturer
     {
         [Required(ErrorMessage = "Отсутвует название организации\n", AllowEmptyStrings = false)]
-        public string organization { get; set; }
+        public string Organization { get; set; }
+
         [RegularExpression(@"\D*", ErrorMessage = "Неверный формат в поле Страна\n")]
         [Required(ErrorMessage = "Отсутствует страна производителя\n")]
-        public string country { get; set; }
+        public string Country { get; set; }
+
         [Required(ErrorMessage = "Отсутствует адрес производителя\n")]
-        public string address { get; set; }
+        public string Address { get; set; }
+
         [Required(ErrorMessage = "Отсутствует телефон производителя\n")]
-        public string telephoneNumber { get; set; }
+        public string TelephoneNumber { get; set; }
 
         private Manufacturer()
         {
-            organization = "";
+            Organization = "";
         }
 
         public Manufacturer(string org, string coun, string addr, string telephone)
         {
-            organization = org;
-            country = coun;
-            address = addr;
-            telephoneNumber = telephone;
+            Organization = org;
+            Country = coun;
+            Address = addr;
+            TelephoneNumber = telephone;
         }
     }
 }

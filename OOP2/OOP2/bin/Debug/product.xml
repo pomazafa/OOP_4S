@@ -1,19 +1,77 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <Name>Кресло</Name>
-    <Number>12488812</Number>
-    <Size>100х200</Size>
-    <Weight>8840</Weight>
+    <Name>Шкаф дубовый</Name>
+    <Number>722516288</Number>
+    <Size>300х400</Size>
+    <Weight>9855</Weight>
     <Type>Непродовольственный</Type>
-    <Date>2019-03-31T14:55:50</Date>
-    <Amount>4</Amount>
-    <Price>47</Price>
+    <Date>2019-03-17T13:33:51</Date>
+    <Amount>23</Amount>
+    <Price>99</Price>
     <Manufacturer>
-      <organization>Ами мебель</organization>
-      <country>Германия</country>
-      <address>г. Дрезден, улица Шеншель, д. 73</address>
-      <telephoneNumber>(83)661-82-73</telephoneNumber>
+      <Organization />
+    </Manufacturer>
+  </Product>
+  <Product>
+    <Name>Кресло дубовое</Name>
+    <Number>55217226</Number>
+    <Size>200х200</Size>
+    <Weight>3986</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-03-25T13:43:18</Date>
+    <Amount>4</Amount>
+    <Price>55</Price>
+    <Manufacturer>
+      <Organization />
+    </Manufacturer>
+  </Product>
+  <Product>
+    <Name>Кресло</Name>
+    <Number>15336623</Number>
+    <Size>100х100</Size>
+    <Weight>4275</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-03-15T08:14:53.5974967+03:00</Date>
+    <Amount>3</Amount>
+    <Price>80</Price>
+    <Manufacturer>
+      <Organization>Другой</Organization>
+      <Country>Норвегия</Country>
+      <Address>пппраеееввее 16</Address>
+      <TelephoneNumber>(44)343-22-11</TelephoneNumber>
+    </Manufacturer>
+  </Product>
+  <Product>
+    <Name>Кресло пушистое</Name>
+    <Number>1234</Number>
+    <Size>100х200</Size>
+    <Weight>4058</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-03-15T08:46:09.1936999+03:00</Date>
+    <Amount>1</Amount>
+    <Price>4</Price>
+    <Manufacturer>
+      <Organization>ZTE</Organization>
+      <Country>Австрия</Country>
+      <Address>аррр</Address>
+      <TelephoneNumber>(15)554-88-38</TelephoneNumber>
+    </Manufacturer>
+  </Product>
+  <Product>
+    <Name>Кресло А</Name>
+    <Number>4444</Number>
+    <Size>200х200</Size>
+    <Weight>6884</Weight>
+    <Type>Непродовольственный</Type>
+    <Date>2019-03-15T08:47:12.7918856+03:00</Date>
+    <Amount>1</Amount>
+    <Price>5</Price>
+    <Manufacturer>
+      <Organization>Ами мебель</Organization>
+      <Country>Эстония</Country>
+      <Address>вроо</Address>
+      <TelephoneNumber>(36)626-62-66</TelephoneNumber>
     </Manufacturer>
   </Product>
 </ArrayOfProduct>

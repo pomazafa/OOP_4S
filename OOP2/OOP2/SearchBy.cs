@@ -179,8 +179,6 @@ namespace OOP2
             bool second = checkBox2.Checked;
             bool third = checkBox3.Checked;
 
-            GetResButton();
-
             if (first || second || third)
             {
                 if (first)
@@ -195,6 +193,7 @@ namespace OOP2
                 {
                     ByPrice();
                 }
+                GetResButton();
             }
             else
             {

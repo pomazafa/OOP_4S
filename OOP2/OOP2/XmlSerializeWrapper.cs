@@ -13,13 +13,19 @@ public class XmlSerializeWrapper<T>
     public XmlSerializeWrapper()
     {
         list = new List<T>();
+        using (FileStream fs = new FileStream("product.xml", FileMode.OpenOrCreate))
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(List<T>));
+            list = (List<T>)formatter.Deserialize(fs);
+        }
+
     }
     public void Serialize(T obj, string filename)
     {
-        XmlSerializer formatter = new XmlSerializer(typeof(List<T>));
         list.Add(obj);
         using (FileStream fs = new FileStream(filename, FileMode.Create))
         {
+            XmlSerializer formatter = new XmlSerializer(typeof(List<T>));
             formatter.Serialize(fs, list);
         }
     }

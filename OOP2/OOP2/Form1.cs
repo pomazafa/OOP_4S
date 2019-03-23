@@ -149,7 +149,6 @@ namespace OOP2
             //}
             #endregion
 
-
             var results = new List<ValidationResult>();
 
             var context = new ValidationContext(o);
@@ -164,7 +163,8 @@ namespace OOP2
 
                 MessageBox.Show(strWithError);
                 return false;
-            }            else
+            }
+            else
                 return true;
         }
 
@@ -184,29 +184,35 @@ namespace OOP2
 
             if (Check(product) && Check(man))
                 XmlS.Serialize(product, "product.xml");
+            XDocument doc = XDocument.Load("product.xml");
+            var query = from prod in doc.Descendants("ArrayOfProduct").Elements("Product")
+                        select prod;
+
+            Result = query.ToList();
+            toolStripStatusLabel1.Text = Result.Count + " объектов, время " + DateTime.Now.ToString();
         }
 
         private void DeserButton_Click(object sender, EventArgs e)
         {
             Product desProduct = XmlS.Deserialize("product.xml");
 
-            richTextBox1.Text = "Наименование товара: " + desProduct.name + "\n";
-            richTextBox1.Text += "Идентификационный номер: " + desProduct.number + "\n";
-            richTextBox1.Text += "Размер: " + desProduct.size + "\n";
-            richTextBox1.Text += "Вес: " + desProduct.weight + "\n";
-            richTextBox1.Text += "Тип: " + desProduct.type + "\n";
-            richTextBox1.Text += "Дата поставки: " + desProduct.date.ToShortDateString() + "\n";
-            richTextBox1.Text += "Количество: " + desProduct.amount + "\n";
-            richTextBox1.Text += "Цена: " + desProduct.price + "\n";
-            richTextBox1.Text += "Организация-производитель: " + desProduct.manufacturer.organization + "\n";
-            richTextBox1.Text += "Страна производителя: " + desProduct.manufacturer.country + "\n";
-            richTextBox1.Text += "Адрес: " + desProduct.manufacturer.address + "\n";
-            richTextBox1.Text += "Телефонный номер: " + desProduct.manufacturer.telephoneNumber + "\n";
+            richTextBox1.Text = "Наименование товара: " + desProduct.Name + "\n";
+            richTextBox1.Text += "Идентификационный номер: " + desProduct.Number + "\n";
+            richTextBox1.Text += "Размер: " + desProduct.Size + "\n";
+            richTextBox1.Text += "Вес: " + desProduct.Weight + "\n";
+            richTextBox1.Text += "Тип: " + desProduct.TypeProduct + "\n";
+            richTextBox1.Text += "Дата поставки: " + desProduct.DateP.ToShortDateString() + "\n";
+            richTextBox1.Text += "Количество: " + desProduct.Amount + "\n";
+            richTextBox1.Text += "Цена: " + desProduct.Price + "\n";
+            richTextBox1.Text += "Организация-производитель: " + desProduct.manufacturer.Organization + "\n";
+            richTextBox1.Text += "Страна производителя: " + desProduct.manufacturer.Country + "\n";
+            richTextBox1.Text += "Адрес: " + desProduct.manufacturer.Address + "\n";
+            richTextBox1.Text += "Телефонный номер: " + desProduct.manufacturer.TelephoneNumber + "\n";
         }
 
         private void AboutProgramMenu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Разработчик: Дубень Полина\nВерсия: 1.1", "Информация о программе");
+            MessageBox.Show("Разработчик: Дубень Полина\nВерсия: 0.1 Аlpha", "Информация о программе");
         }
 
         private void поНазваниюToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,8 +243,6 @@ namespace OOP2
         {
             XDocument doc = XDocument.Load("product.xml");
 
-            XDocument datatemp = new XDocument(doc);
-
             var query = from product in doc.Descendants("ArrayOfProduct").Elements("Product")
                         orderby (product.Element("Date").Value)
                         select product;
@@ -252,8 +256,6 @@ namespace OOP2
 
             XDocument doc = XDocument.Load("product.xml");
 
-            XDocument datatemp = new XDocument(doc);
-
             var query = from product in doc.Descendants("ArrayOfProduct").Elements("Product")
                         orderby (product.Element("Manufacturer").Element("country").Value)
                         select product;
@@ -265,8 +267,6 @@ namespace OOP2
         private void названиюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             XDocument doc = XDocument.Load("product.xml");
-
-            XDocument datatemp = new XDocument(doc);
 
             var query = from product in doc.Descendants("ArrayOfProduct").Elements("Product")
                         orderby (product.Element("Name").Value)
@@ -281,7 +281,23 @@ namespace OOP2
             resFile.Descendants("Product").Remove();
             resFile.Descendants("ArrayOfProduct").First().Add(Result);
             resFile.Save("Result.xml");
+           
         }
-        
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            toolStripStatusLabel1.Text = Result.Count + " объектов, " + DateTime.Today.ToString();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            XDocument doc = XDocument.Load("product.xml");
+            var query = from product in doc.Descendants("ArrayOfProduct").Elements("Product")
+                        select product;
+
+            Result = query.ToList();
+
+            toolStripStatusLabel1.Text = Result.Count + " объектов, время " + DateTime.Now.ToString();
+        }
     }
 }
