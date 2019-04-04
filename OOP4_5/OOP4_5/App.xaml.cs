@@ -27,6 +27,7 @@ namespace OOP4_5
         public App()
         {
             m_Languages.Clear();
+            m_Languages.Add(new CultureInfo("es-AR"));
             m_Languages.Add(new CultureInfo("en-US"));
             m_Languages.Add(new CultureInfo("ru-RU"));
         }
@@ -52,6 +53,9 @@ namespace OOP4_5
                 switch (value.Name)
                 {
                     case "ru-RU":
+                        dict.Source = new Uri(String.Format("lang.{0}.xaml", value.Name), UriKind.Relative);
+                        break;
+                    case "es-AR":
                         dict.Source = new Uri(String.Format("lang.{0}.xaml", value.Name), UriKind.Relative);
                         break;
                     default:

@@ -12,4 +12,6 @@
     <v:String x:Key="m_Copy">Copy</v:String>
     <v:String x:Key="m_Past">Past</v:String>
     <v:String x:Key="m_Color">Color</v:String>
+    <v:String x:Key="m_Undo">Undo</v:String>
+    <v:String x:Key="m_Redo">Redo</v:String>
 </ResourceDictionary>

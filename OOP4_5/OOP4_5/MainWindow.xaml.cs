@@ -24,9 +24,6 @@ namespace OOP4_5
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
-
         private void colorbinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
@@ -57,13 +54,26 @@ namespace OOP4_5
             MyTextBox.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, Yellow.Background);
         }
 
-
+        ResourceDictionary prev = null;
         string buffer = "";
+        List<string> files;
         public MainWindow()
         {
             InitializeComponent();
             MyWindow.Cursor = new Cursor("F:\\2.cur");
             MyTextBox.Cursor = new Cursor("F:\\1.cur");
+            files = new List<string>();
+           
+            using (StreamReader sr = new StreamReader("files.txt"))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    files.Add(line);
+                }
+            }
+
+            file.ItemsSource = files;
 
             App.LanguageChanged += LanguageChanged;
 
@@ -83,6 +93,24 @@ namespace OOP4_5
 
             this.MyTextBox.AddHandler(RichTextBox.DragOverEvent, new DragEventHandler(this.DragItem), true);
             this.MyTextBox.AddHandler(RichTextBox.DropEvent, new DragEventHandler(this.DropItem), true);
+        }
+
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            if (Theme.SelectedItem != null)
+            {
+                string style = (Theme.SelectedItem as ComboBoxItem).Content as string;
+                // определяем путь к файлу ресурсов
+                var uri = new Uri(style + ".xaml", UriKind.Relative);
+                // загружаем словарь ресурсов
+                ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+                // очищаем коллекцию ресурсов приложения
+                if(prev!=null)
+                    Application.Current.Resources.Remove(prev);
+                // добавляем загруженный словарь ресурсов
+                Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+                prev = resourceDict;
+            }
         }
 
         private void LanguageChanged(Object sender, EventArgs e)
@@ -168,6 +196,15 @@ namespace OOP4_5
                 MyTextBox.Document.ContentEnd);
                 range.Load(fileStream, DataFormats.Text);
                 this.Title = dlg.FileName;
+                if (!files.Contains(dlg.FileName))
+                {
+                    files.Add(dlg.FileName);
+                }
+                using (StreamWriter sw = new StreamWriter("files.txt"))
+                {
+                    foreach (string str in files)
+                        sw.WriteLine(str);
+                }
             }
         }
 
@@ -296,6 +333,22 @@ namespace OOP4_5
                 }
                 lblStatus.Text = countOfSymbols.ToString();
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            
+                Close();
+        }
+
+        private void file_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.Title = ((ComboBox)sender).SelectedItem as string;
+
+            FileStream fileStream = new FileStream(((ComboBox)sender).SelectedItem as string, FileMode.Open);
+            TextRange range = new TextRange(MyTextBox.Document.ContentStart,
+            MyTextBox.Document.ContentEnd);
+            range.Load(fileStream, DataFormats.Text);
         }
     }
 }
