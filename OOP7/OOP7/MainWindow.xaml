@@ -1,0 +1,41 @@
+﻿<Window x:Class="OOP7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP7"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Closing="Window_Closing"
+        local:MainWindow.CloseEv="close_click"
+        >
+    <Window.Resources>
+        <local:SizeDP  SizeProp="20" x:Key="size1"></local:SizeDP>
+        <local:ContentDP ContentProp="контент из свойства зависимости" x:Key="cont1"></local:ContentDP>
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MyCommands.Requery"
+                        Executed="CommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Content="Размер текста из свойства зависимостей" Grid.Row="0" DataContext="{StaticResource size1}" FontSize="{Binding SizeProp,  Mode=OneWay}"></Button>
+        <local:threeUser Grid.Row="1" Grid.Column="0" Tap="HandleChildSignal"></local:threeUser>
+        <Button Grid.Row="2" Grid.Column="0" DataContext="{StaticResource cont1}" Content="{Binding ContentProp,  Mode=OneWay}"></Button>
+        <local:OneUser Grid.Row="4" Grid.Column="0"></local:OneUser>
+        <local:twoUser Grid.Row="3" Grid.Column="0"></local:twoUser>
+        <RichTextBox Name="Rich" Grid.RowSpan="5" Grid.Column="1"></RichTextBox>
+    </Grid>
+</Window>

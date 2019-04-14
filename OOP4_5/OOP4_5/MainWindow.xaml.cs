@@ -100,14 +100,10 @@ namespace OOP4_5
             if (Theme.SelectedItem != null)
             {
                 string style = (Theme.SelectedItem as ComboBoxItem).Content as string;
-                // определяем путь к файлу ресурсов
                 var uri = new Uri(style + ".xaml", UriKind.Relative);
-                // загружаем словарь ресурсов
                 ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
-                // очищаем коллекцию ресурсов приложения
                 if(prev!=null)
                     Application.Current.Resources.Remove(prev);
-                // добавляем загруженный словарь ресурсов
                 Application.Current.Resources.MergedDictionaries.Add(resourceDict);
                 prev = resourceDict;
             }
