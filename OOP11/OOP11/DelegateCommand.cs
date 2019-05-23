@@ -12,10 +12,8 @@ namespace OOP11
         Action<object> execute;
         Func<object, bool> canExecute;
 
-        // Событие, необходимое для ICommand
         public event EventHandler CanExecuteChanged;
 
-        // Два конструктора
         public DelegateCommand(Action<object> execute, Func<object, bool> canExecute)
         {
             this.execute = execute;
@@ -28,7 +26,6 @@ namespace OOP11
             this.canExecute = this.AlwaysCanExecute;
         }
 
-        // Методы, необходимые для ICommand
         public void Execute(object param)
         {
             execute(param);
@@ -39,14 +36,12 @@ namespace OOP11
             return canExecute(param);
         }
 
-        // Метод, необходимый для IDelegateCommand
         public void RaiseCanExecuteChanged()
         {
             if (CanExecuteChanged != null)
                 CanExecuteChanged(this, EventArgs.Empty);
         }
 
-        // Метод CanExecute по умолчанию
         private bool AlwaysCanExecute(object param)
         {
             return true;

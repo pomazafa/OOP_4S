@@ -9,7 +9,8 @@ namespace OOP11
 {
     class MainViewModel
     {
-        public ObservableCollection<ConcertViewModel> ConcertsList { get; set; }
+        public ObservableCollection<ConcertViewModel> ConcertsList { get; set; }
+
 
         public MainViewModel(List<Concert> concerts)
         {

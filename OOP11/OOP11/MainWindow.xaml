@@ -29,7 +29,6 @@
                                 <TextBlock Text="{Binding TicketsFanZone, Mode=TwoWay}" FontWeight="Bold" Margin="10,0"/>
                                 <TextBlock Text="шт" />
                             </StackPanel>
-                           
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Танцпол:" />
                                 <TextBlock Text="{Binding TicketsDanceZone, Mode=TwoWay}" FontWeight="Bold" Margin="10,0"/>
@@ -74,6 +73,6 @@
                     </Border>
                 </DataTemplate>
             </ContentControl.ContentTemplate>
-        </ContentControl>
+        </ContentControl>
     </Grid>
 </Window>
